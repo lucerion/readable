@@ -1,0 +1,19 @@
+{
+  "name": "express-app-template",
+  "version": "0.0.1",
+  "description": "Express app template",
+  "repository": "https://github.com/lucerion/express-app-template",
+  "license": "BSD-3-Clause",
+  "author": "Alexander Skachko <alexander.skachko@gmail.com>",
+  "scripts": {
+    "start": "node src/index.js",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "eslint": "^7.9.0"
+  }
+}
