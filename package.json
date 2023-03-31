@@ -9,7 +9,9 @@
     "lint": "eslint ."
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "@mozilla/readability": "^0.4.3",
+    "express": "^4.17.1",
+    "jsdom": "^21.1.1"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
