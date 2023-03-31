@@ -1,45 +1,17 @@
 const express = require('express');
-const https = require('https');
-const { JSDOM } = require('jsdom');
-const { Readability } = require('@mozilla/readability');
+const { readable } = require('./utils');
+const layout = require('./views/layout');
 
 require('dotenv/config');
 
 const app = express();
 const port = process.env.PORT || 3000;
 
-const request = (url) => (
-  new Promise((resolve) => {
-    let data = '';
+app.get('/', async ({ query: { url }}, res) => {
+  const readablePage = await readable.fetch(url);
+  const page = layout(readablePage);
 
-    https.get(url, (resp) => {
-      resp.on('data', (chunk) => data += chunk);
-      resp.on('end', () => resolve(data));
-    });
-  })
-);
-
-const layout = ({ title, content }) => (
-  `
-    <!doctype html>
-    <html>
-    <head>
-        <title>${title}</title>
-    </head>
-    <body>
-      ${content}
-    </body>
-    </html>
-  `
-);
-
-app.get('/', async (req, res) => {
-  const pageString = await request(req.query.url);
-  const pageDOM = new JSDOM(pageString);
-  const pageObject = new Readability(pageDOM.window.document).parse();
-  const readablePage = layout(pageObject);
-
-  return res.send(readablePage);
+  return res.send(page);
 });
 
 app.listen(port, () => console.warn(`Listening on port ${port}`));
