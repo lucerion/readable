@@ -1,9 +1,8 @@
 {
-  "name": "express-app-template",
+  "name": "readable",
   "version": "0.0.1",
-  "description": "Express app template",
-  "repository": "https://github.com/lucerion/express-app-template",
-  "license": "BSD-3-Clause",
+  "description": "Make sites readable",
+  "repository": "https://github.com/lucerion/readable",
   "author": "Alexander Skachko <alexander.skachko@gmail.com>",
   "scripts": {
     "start": "node src/index.js",
