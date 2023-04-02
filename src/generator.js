@@ -2,18 +2,18 @@ const { crypto } = require('./utils');
 
 const generateSecret = () => {
   const hash = crypto.hash();
-  console.log(hash); // eslint-disable-line no-console
+  console.warn(hash);
 };
 
 const generate = (args) => {
-  const [command] = args;
+  const [command, ..._commandArgs] = args;
 
   switch(command) {
   case 'secret':
     generateSecret();
     break;
   default:
-    console.log(`Command '${command}' not found`); // eslint-disable-line no-console
+    console.error(`Command '${command}' not found`);
   }
 };
 
