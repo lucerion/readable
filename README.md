@@ -3,16 +3,15 @@
 Make sites readable
 
 
-## Installation
+## Installation and usage
 
-    yarn install
+* install packages
 
+        yarn install
 
-## Usage
+* create `.env` file (see [.env.example](.env.example)).
+  Use `yarn generate.secret` command to generate `SECRET_KEY` and `SECRET_IV`
 
-    yarn start
+* run application
 
-
-## Linter
-
-    yarn lint
+        yarn start

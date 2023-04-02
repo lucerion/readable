@@ -1,4 +1,5 @@
-const http = require('./http');
+const request = require('./request');
 const readable = require('./readable');
+const crypto = require('./crypto');
 
-module.exports = { http, readable };
+module.exports = { request, readable, crypto };
