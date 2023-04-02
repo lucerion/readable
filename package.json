@@ -5,7 +5,7 @@
   "repository": "https://github.com/lucerion/readable",
   "author": "Alexander Skachko <alexander.skachko@gmail.com>",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node src/app.js",
     "generate.secret": "node src/generator.js secret",
     "lint": "eslint ."
   },
