@@ -13,7 +13,7 @@ const generate = (args) => {
     generateSecret();
     break;
   default:
-    console.log(`Command ${command} not found`); // eslint-disable-line no-console
+    console.log(`Command '${command}' not found`); // eslint-disable-line no-console
   }
 };
 
