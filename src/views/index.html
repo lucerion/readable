@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Readable</title>
+    </head>
+    <style>
+      html, body, content {
+        height: 99%;
+      }
+
+      content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      content form input[name="url"] {
+        font-size: 1.5em;
+        width: 60vw;
+        height: 5vh;
+      }
+    </style>
+    <body>
+      <content>
+        <form action="/" method="post">
+          <input type="url" name="url" placeholder="url" pattern="^https?://.*" required>
+        </form>
+      </content>
+    </body>
+</html>
