@@ -6,9 +6,7 @@ const layout = require('../views/layout');
 
 const index = (req, res) => res.sendFile(path.join(`${__dirname}/../views/index.html`));
 
-const create = (req, res) => {
-  const { body: { url } } = req;
-
+const create = ({ body: { url }}, res) => {
   if (!isURLValid(url)) return res.send(URL_ERROR_MESSAGES.urlIsNotValid);
 
   const urlHash = crypto.encrypt(url, SECRET_KEY, SECRET_IV);
