@@ -6,7 +6,7 @@
   "author": "Alexander Skachko <alexander.skachko@gmail.com>",
   "scripts": {
     "start": "node src/app.js",
-    "generate.secret": "node src/generator.js secret",
+    "generate.secret": "node src/tasks secret",
     "lint": "eslint ."
   },
   "dependencies": {

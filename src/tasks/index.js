@@ -1,9 +1,4 @@
-const { crypto } = require('./utils');
-
-const generateSecret = () => {
-  const hash = crypto.hash();
-  console.warn(hash);
-};
+const { generateSecret } = require('./secret');
 
 const generate = (args) => {
   const [command, ..._commandArgs] = args;
