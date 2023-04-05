@@ -16,13 +16,14 @@ const create = ({ body: { url }}, res) => {
 
 const show = async ({ params: { hash }}, res) => {
   let url;
+  let page;
   try {
     url = crypto.decrypt(hash, SECRET_KEY, SECRET_IV);
+    page = await request.get(url);
   } catch (_err) {
     return res.send(URL_ERROR_MESSAGES.linkIsNotValid);
   }
 
-  const page = await request.get(url);
   const parsedPage = readability.parse(page);
   const html = layout(parsedPage);
 
