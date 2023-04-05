@@ -3,7 +3,7 @@ const URL_ERROR_MESSAGES = {
   linkIsNotValid: 'Link is not valid.',
 };
 
-const isURLValid = (url) => url ? true : false; // TODO: add validation that the url starts with 'http' or 'https'
-const isURLHashValid = (hash) => hash ? true : false;
+// TODO: add stricter validation of the url
+const isURLValid = (url) => url && (url.startsWith('http://') || url.startsWith('https://')) ? true : false;
 
-module.exports = { URL_ERROR_MESSAGES, isURLValid, isURLHashValid };
+module.exports = { URL_ERROR_MESSAGES, isURLValid };
