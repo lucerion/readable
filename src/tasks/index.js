@@ -12,4 +12,5 @@ const generate = (args) => {
   }
 };
 
-generate(process.argv.slice(2));
+const commandWithArgs = process.argv.slice(2);
+generate(commandWithArgs);
