@@ -8,8 +8,10 @@ const get = (url) => (
     let data = '';
 
     client(url).get(url, (resp) => {
-      if (resp.statusCode === 302) {
-        return resolve(get(resp.headers.location));
+      if (resp.statusCode >= 300 && resp.statusCode < 400) {
+        const redirectURL = resp.headers.location;
+        const page = get(redirectURL);
+        return resolve(page);
       }
 
       resp.on('data', (chunk) => data += chunk);
