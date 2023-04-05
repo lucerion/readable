@@ -1,16 +1,16 @@
 const { generateSecret } = require('./secret');
 
-const generate = (args) => {
-  const [command, ..._commandArgs] = args;
+const executeTask = (args) => {
+  const [task, ..._taskArgs] = args;
 
-  switch(command) {
+  switch(task) {
   case 'secret':
     generateSecret();
     break;
   default:
-    console.error(`Command '${command}' not found`);
+    console.error('Task not found');
   }
 };
 
-const commandWithArgs = process.argv.slice(2);
-generate(commandWithArgs);
+const taskWithArgs = process.argv.slice(2);
+executeTask(taskWithArgs);

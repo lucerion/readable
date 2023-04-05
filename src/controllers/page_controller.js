@@ -7,7 +7,9 @@ const layout = require('../views/layout');
 const index = (req, res) => res.sendFile(path.join(`${__dirname}/../views/index.html`));
 
 const create = ({ body: { url }}, res) => {
-  if (!isURLValid(url)) return res.send(URL_ERROR_MESSAGES.urlIsNotValid);
+  if (!isURLValid(url)) {
+    return res.send(URL_ERROR_MESSAGES.urlIsNotValid);
+  }
 
   const urlHash = crypto.encrypt(url, SECRET_KEY, SECRET_IV);
 
@@ -20,7 +22,8 @@ const show = async ({ params: { hash }}, res) => {
   try {
     url = crypto.decrypt(hash, SECRET_KEY, SECRET_IV);
     page = await request.get(url);
-  } catch (_err) {
+  } catch (error) {
+    console.error(error);
     return res.send(URL_ERROR_MESSAGES.linkIsNotValid);
   }
 
