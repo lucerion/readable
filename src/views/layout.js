@@ -6,14 +6,19 @@ module.exports = ({ title, content }) => (
             <title>${title}</title>
         </head>
         <style>
-          body {
+          content {
             font-family: sans-serif;
-            margin: 1em;
+            line-height: 1.5;
+            display: block;
+            width: 80%;
+            margin: 0 auto;
           }
         </style>
         <body>
-            <h1>${title}</h1>
-            ${content}
+            <content>
+              <h1>${title}</h1>
+              ${content}
+            </content>
         </body>
     </html>
   `
