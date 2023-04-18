@@ -2,9 +2,9 @@ const path = require('path');
 const { SECRET_KEY, SECRET_IV } = require('../config');
 const { request, readability, crypto } = require('../utils');
 const { URL_ERROR_MESSAGES, isURLValid } = require('../validators');
-const layout = require('../views/layout');
+const showTemplate = require('../views/page/show');
 
-const index = (req, res) => res.sendFile(path.join(`${__dirname}/../views/index.html`));
+const index = (req, res) => res.sendFile(path.join(__dirname, '..', 'views', 'page', 'index.html'));
 
 const create = ({ body: { url }}, res) => {
   if (!isURLValid(url)) {
@@ -28,7 +28,7 @@ const show = async ({ params: { hash }}, res) => {
   }
 
   const parsedPage = readability.parse(page);
-  const html = layout(parsedPage);
+  const html = showTemplate(parsedPage);
 
   return res.send(html);
 };
