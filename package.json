@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Make sites readable",
   "repository": "https://github.com/lucerion/readable",
+  "license": "BSD-3-Clause",
   "author": "Alexander Skachko <alexander.skachko@gmail.com>",
   "scripts": {
     "start": "node --watch src/",

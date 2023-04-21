@@ -28,3 +28,8 @@ Make sites readable
 * run
 
         docker run -p 3000:3000 --env-file .env readable
+
+
+## License
+
+[BSD-3-Clause](LICENSE)
