@@ -3,31 +3,24 @@
 Make sites readable
 
 
-## Installation and usage
+## Setup
 
-* install packages
+### Locally
 
-        yarn install
-
-* create `.env` file (see [.env.example](.env.example)).
+* Install dependencies: `yarn install`
+* Create `.env` file (see [.env.example](.env.example)) and edit it.
   Use `yarn generate.secret` command to generate `SECRET_KEY` and `SECRET_IV`
-
-* run application
-
-        yarn start
+* Run application: `yarn start`
+* Open [http://localhost:8080](http://localhost:8080) in your browser.
 
 ### Docker
 
-* create `.env` file (see [.env.example](.env.example)).
+* [Install Docker](https://docs.docker.com/get-docker/) on your machine.
+* Create `.env` file (see [.env.example](.env.example)) and edit it.
   Use `yarn generate.secret` command to generate `SECRET_KEY` and `SECRET_IV`
-
-* build image
-
-        docker build -t readable .
-
-* run
-
-        docker run -p 3000:3000 --env-file .env readable
+* Build image: `docker build -t readable .`
+* Run application: `docker run -p 8080:8080 --env-file .env readable`
+* Open [http://localhost:8000](http://localhost:8080) in your browser.
 
 
 ## License
